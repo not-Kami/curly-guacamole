@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="number"> Entrez un nombre  
+         <input type="text" value="" id="number">
+    </label>
+    <button id="submit">Guess</button>
+    <p id="hint"></p>
+    <script>
+        let hint = document.getElementById('hint');
+        let compteur = 1;
+        let number = document.getElementById('number');
+        let action = document.getElementById('submit');
+        // Génération du nombre entre 1 & 100
+        let numberGuess = Math.floor(Math.random() * 100) + 1;
+        console.log(numberGuess)
+
+        // Fonction pour deviner le nombre
+        function guess(inputNumber) {
+            inputNumber = parseInt(inputNumber);
+            if(inputNumber === numberGuess) {
+                hint.innerHTML = 'Félicitations vous avez deviné le nombre en ' + compteur +' coup(s)';
+
+            } else if(inputNumber > numberGuess) {
+                hint.innerHTML ='Le nombre est trop grand';
+            } else {
+                hint.innerHTML ='Le nombre est trop petit';
+            }
+            compteur++
+        }
+
+        action.addEventListener('click', function() { guess(number.value) });
+    </script>
+</body>
+</html>
