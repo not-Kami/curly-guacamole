@@ -6,10 +6,13 @@
     <title>Document</title>
 </head>
 <body>
+    <label for="compteur">Entrez un nombre d'essai maximum</label>
+        <input type="text" value="" id="compteur">
     <label for="number"> Entrez un nombre  
          <input type="text" value="" id="number">
     </label>
     <button id="submit">Guess</button>
+  <a href="index.html"><button>RESTART !</button></a>
     <p id="hint"></p>
     <script>
         let hint = document.getElementById('hint');
@@ -20,21 +23,25 @@
         let numberGuess = Math.floor(Math.random() * 100) + 1;
         console.log(numberGuess)
 
+   
+        
+        action.addEventListener('click', function() { guess(number.value) });
+
         // Fonction pour deviner le nombre
+
+        if(){
         function guess(inputNumber) {
             inputNumber = parseInt(inputNumber);
             if(inputNumber === numberGuess) {
                 hint.innerHTML = 'Félicitations vous avez deviné le nombre en ' + compteur +' coup(s)';
-
             } else if(inputNumber > numberGuess) {
                 hint.innerHTML ='Le nombre est trop grand';
             } else {
                 hint.innerHTML ='Le nombre est trop petit';
             }
             compteur++
+            }
         }
-
-        action.addEventListener('click', function() { guess(number.value) });
     </script>
 </body>
 </html>
