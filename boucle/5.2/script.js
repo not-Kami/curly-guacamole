@@ -5,7 +5,7 @@ let message = " le nombre est trop ";
 
 
 button.addEventListener("click", function() {
-while (nombre < 10 || nombre > 20 || isNaN(nombre) {
+while (nombre < 10 || nombre > 20 || isNaN(nombre)) {
     nombre = Number(prompt("Entrez un nombre compris entre 10 et 20"));
     if (nombre < 10) {
         alert(message +  "petit");
